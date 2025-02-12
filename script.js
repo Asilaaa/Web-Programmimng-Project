@@ -23,7 +23,6 @@ const books = [
     }
   ];
   
-  // Function to display books
   function displayBooks(books) {
     const bookGrid = document.getElementById("book-grid");
     bookGrid.innerHTML = ""; // Clear existing books
