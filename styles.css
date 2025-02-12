@@ -84,3 +84,51 @@ footer {
     background: rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
+header {
+    position: relative;
+}
+
+.about-button {
+    position: absolute;
+    top: 70px;
+    left: 1250px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.about-button:hover {
+    background-color: #0056b3;
+}
+.moving-footer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.moving-footer p {
+    display: inline-block;
+    position: relative;
+    animation: moveRight 10s linear infinite;
+    font-size: 16px;
+    color: #ffff;
+}
+
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-270%);
+    }
+    100% {
+        transform: translateX(270%);
+    }
+}
+
