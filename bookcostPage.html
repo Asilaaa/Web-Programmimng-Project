@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<h2>Upload a Photo</h2>
+
+
+<input type="file" id="imageUpload" accept="image/*">
+
+
+<img id="bookImage" src="" alt="Uploaded Image" style="display:none; width: 100%; max-width: 500px; margin-top: 20px;">
+
+<script>
+    const imageUpload = document.getElementById('imageUpload');
+    const bookImage = document.getElementById('bookImage');
+
+    imageUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                bookImage.src = e.target.result;
+                bookImage.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+</body>
+</html>
