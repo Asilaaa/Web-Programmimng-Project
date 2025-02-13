@@ -1,31 +1,9 @@
-// Sample Book Data
-const books = [
-    {
-      title: "The Great Gatsby",
-      author: "F. Scott Fitzgerald",
-      description: "A classic novel about the American Dream.",
-      cover: "https://via.placeholder.com/150",
-      file: "books/book1.pdf"
-    },
-    {
-      title: "1984",
-      author: "George Orwell",
-      description: "A dystopian novel about totalitarianism.",
-      cover: "https://via.placeholder.com/150",
-      file: "books/book2.pdf"
-    },
-    {
-      title: "To Kill a Mockingbird",
-      author: "Harper Lee",
-      description: "A story of racial injustice in the American South.",
-      cover: "https://via.placeholder.com/150",
-      file: "books/book3.pdf"
-    }
-  ];
-  
-  function displayBooks(books) {
+import { books } from "./js/Books.js";
+
+
+    function displayBooks(books) {
     const bookGrid = document.getElementById("book-grid");
-    bookGrid.innerHTML = ""; // Clear existing books
+    bookGrid.innerHTML = "";
   
     books.forEach(book => {
       const bookCard = document.createElement("div");
@@ -43,7 +21,7 @@ const books = [
     });
   }
   
-  // Function to filter books
+
   function filterBooks() {
     const searchTerm = document.getElementById("search").value.toLowerCase();
     const filteredBooks = books.filter(book =>
@@ -53,5 +31,31 @@ const books = [
     displayBooks(filteredBooks);
   }
   
-  // Initial display of books
   displayBooks(books);
+
+  document.getElementById("upload-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById("book-title").value;
+    const author = document.getElementById("book-author").value;
+    const description = document.getElementById("book-description").value;
+    const coverFile = document.getElementById("book-cover").files[0];
+    const pdfFile = document.getElementById("book-file").files[0];
+
+    if (!coverFile || !pdfFile) {
+        alert("Please upload both a cover image and a PDF file.");
+        return;
+    }
+
+    const coverURL = URL.createObjectURL(coverFile);
+    const pdfURL = URL.createObjectURL(pdfFile);
+
+    const newBook = { title, author, description, cover: coverURL, file: pdfURL };
+
+    books.push(newBook);
+    displayBooks(books);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayBooks(books);
+});
