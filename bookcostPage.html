@@ -10,30 +10,68 @@
 </head>
 <body>
 <h2>Upload a Photo</h2>
+<h3>Upload a photo here and receive coins as a reward!</h3>
 
 
+<div class="points-container">
+    <span id="points">0</span> <span class="coin-symbol">💰</span>
+</div>
 <input type="file" id="imageUpload" accept="image/*">
 
 
 <img id="bookImage" src="" alt="Uploaded Image" style="display:none; width: 100%; max-width: 500px; margin-top: 20px;">
-
-<script>
-    const imageUpload = document.getElementById('imageUpload');
-    const bookImage = document.getElementById('bookImage');
-
-    imageUpload.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                bookImage.src = e.target.result;
-                bookImage.style.display = 'block';
-            };
-
-            reader.readAsDataURL(file);
-        }
-    });
-</script>
+<script src="coins.js"></script>
 </body>
+<style>
+   body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f7fa; 
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 24px;
+    color: #ffdddd;
+}
+
+h3 {
+    font-size: 18px;
+    color: #eeeaea;
+}
+
+input[type="file"] {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #c3cfe2; 
+    color: #333;
+    font-size: 16px;
+}
+
+input[type="file"]:hover {
+    border-color: #666;
+    background-color: #a3b8c4; 
+}
+
+img {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+
+</style>
 </html>
