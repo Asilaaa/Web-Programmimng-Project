@@ -1,77 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<h2>Upload a Photo</h2>
-<h3>Upload a photo here and receive coins as a reward!</h3>
 
+<header> <!--button appearance topleft corner -->
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <h1>📚 NewUU Library</h1>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="points-container">
+<div class="search-container">
+  <input type="text" id="search" placeholder="Search books..." oninput="filterBooks()">
+</div>   <!-- this is for searching button -->
+
+<main>
+  <h2>Upload a Photo</h2>
+  <h3>Receive coins as a reward!</h3>
+  <div class="upload-container">
+    <input type="file" id="imageUpload" accept="image/*">
+    <img id="bookImage" src="" alt="Uploaded Image">
+  </div>
+  <div class="points-container">
     <span id="points">0</span> <span class="coin-symbol">💰</span>
-</div>
-<input type="file" id="imageUpload" accept="image/*">
+  </div>
+</main>
 
-
-<img id="bookImage" src="" alt="Uploaded Image" style="display:none; width: 100%; max-width: 500px; margin-top: 20px;">
-<script src="coins.js"></script>
+<script src="coins.js"></script> <!--Asila this for coin points -->
+<script src="script.js"></script>
 </body>
 <style>
-   body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f5f7fa; 
+* {
+  box-sizing: border-box;
 }
-
-h2, h3 {
-    text-align: center;
-    margin: 10px 0;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
-h2 {
-    font-size: 24px;
-    color: #ffdddd;
+.points-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 999;
 }
-
-h3 {
-    font-size: 18px;
-    color: #eeeaea;
+header {
+  background: linear-gradient(to right, #75ded3, #e3eeff);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 20px;
+  margin-top: 60px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.logo {
+  width: 40px;
+  margin-right: 20px;
+}
+nav {
+  margin-left: auto;
+  display: none;
+}
+nav.active {
+  display: block;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+.search-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.search-container input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+main h2 {
+  margin-top: 40px;
+  color: white;
+}
+main h3 {
+  margin-bottom: 20px;
+  color: #eeeaea;
+}
 input[type="file"] {
-    margin-top: 20px;
-    padding: 15px;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #c3cfe2; 
-    color: #333;
-    font-size: 16px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 16px;
 }
-
 input[type="file"]:hover {
-    border-color: #666;
-    background-color: #a3b8c4; 
+  background-color: rgba(255, 255, 255, 0.4);
 }
-
-img {
-    display: none;
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
+#bookImage {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 8px;
 }
-
-
 </style>
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active"); //Asila this for button left top corner
+}
+</script>
 </html>
