@@ -232,3 +232,15 @@ function Read(book) {
 }
 
 displayBooks(books);
+
+function toggleMenu() {
+  const navMenu = document.getElementById("navMenu");
+  const pageContent = document.getElementById("pageContent");
+
+  navMenu.classList.toggle("active");
+  pageContent.classList.toggle("active");
+}
+
+
+
+
