@@ -173,7 +173,7 @@ const books = [
     description: "The original tool for improving public oration",
     cover: "https://i.pinimg.com/736x/90/30/b1/9030b1384455dc897f28318e2399b7a9.jpg",
     file: "books/The_Art_of_Public_Speaking_The_Original_Tool_for_Improving_Public.pdf",
-    genres: []
+    genres: ["Non-fiction", "Self-Help", "Communication", "Public Speaking", "Personal Development"]
   },
 
   {
@@ -182,7 +182,7 @@ const books = [
     description: "A deep dive into the two systems of thinking that shape our decisions and judgments.",
     cover: "https://i.pinimg.com/736x/59/13/b3/5913b3449e4cbd0a077fbc99181b3393.jpg",
     file: "books/Thinking, Fast and Slow by Daniel Kahneman.pdf",
-    genres: []
+    genres: ["Non-fiction", "Psychology", "Cognitive Science", "Behavioral Economics", "Self-Help"]
   },
 
   {
@@ -191,6 +191,66 @@ const books = [
     description: "A comprehensive vocabulary-building guide to improve language skills and communication.",
     cover: "https://m.media-amazon.com/images/I/614-qjCBE4L.jpg",
     file: "books/Thinking, Fast and Slow by Daniel Kahneman.pdf",
+    genres: ["Non-fiction", "Education", "Self-Help", "Vocabulary", "Language Learning"]
+  },
+  {
+    title: "The Advantures of Sherlock Holmes",
+    author: "Arthur Conan Doyle",
+    description: "A classic collection of twelve detective stories featuring the brilliant Sherlock Holmes and his loyal companion, Dr. Watson, as they solve intriguing mysteries in Victorian London.",
+    cover: "https://i.pinimg.com/736x/0c/e9/79/0ce9791f149b0dd77387eae1d7570012.jpg",
+    file: "books/TheAdventuresofSherlockHolmes.pdf",
+    genres: ["Mystery", "Detective Fiction", "Classics", "Crime", "Thriller"]
+  },
+  {
+    title: "The Little Prince",
+    author: "Antoine de Saint Exupéry",
+    description: "A timeless fable about love, friendship, and human nature, 'The Little Prince' follows a young prince on a journey across planets, discovering profound truths along the way.",
+    cover: "https://i.pinimg.com/736x/77/fc/bc/77fcbcfdbb3986c141b1358a2015d3a1.jpg",
+    file: "books/TheLittlePrince.pdf",
+    genres: ["Fiction", "Philosophy", "Children's Literature", "Fantasy", "Classics"]
+  },
+  {
+    title: "The Count Monte Cristo",
+    author: "Alexandre Dumas",
+    description: "A gripping tale of betrayal, revenge, and redemption, 'The Count of Monte Cristo' follows Edmond Dantès as he transforms from a wronged sailor into a mysterious and wealthy nobleman seeking justice.",
+    cover: "https://i.pinimg.com/736x/10/c5/3f/10c53f620cd0f4df9c2bf9a271dcb84c.jpg",
+    file: "books/797The-Count-of-Monte-Cristo.pdf",
+    genres: ["Fiction", "Adventure", "Historical Fiction", "Classics", "Revenge"]
+  },
+
+  {
+    title: "The Almanack of Naval Ravikant",
+    author: "Eric Jorgenson",
+    description: "A collection of insights and wisdom from entrepreneur and investor Naval Ravikant, covering topics like wealth, happiness, decision-making, and personal growth.",
+    cover: "https://i.pinimg.com/736x/42/29/0c/42290cef65903c3745aa237f670f2275.jpg",
+    file: "books/Eric-Jorgenson_The-Almanack-of-Naval-Ravikant_Final.pdf",
+    genres: ["Non-fiction", "Personal Development", "Wealth", "Philosophy", "Entrepreneurship"]
+  },
+
+  {
+    title: "Poirot Investigates",
+    author: "Agatha Chistie",
+    description: "A collection of short stories featuring the brilliant detective Hercule Poirot, solving intriguing cases with his signature logic, wit, and deduction skills.",
+    cover: "https://i.pinimg.com/736x/53/d7/4b/53d74bcc677ce40b6f641a7f2750b5c9.jpg",
+    file: "books/Poirot-Investigates-Agatha-Christie.pdf",
+    genres: ["Mystery", "Detective Fiction", "Crime", "Classics", "Thriller"]
+  },
+
+  {
+    title: "Secrets of Divine Love",
+    author: "A. Helwa",
+    description: "A spiritual journey into the heart of Islam, offering insights into divine love through Quranic teachings, Islamic mysticism, and personal reflections.",
+    cover: "https://m.media-amazon.com/images/I/716S4NoX3kL._AC_UF1000,1000_QL80_.jpg",
+    file: "books/secrets-of-divine-love-a-spiritual-journey-into-the-heart-of-islam-1734231203-9781734231205_compress.pdf",
+    genres: ["Spirituality", "Islam", "Religion", "Mysticism", "Self-Help"]
+  },
+
+  {
+    title: "",
+    author: "",
+    description: "",
+    cover: "",
+    file: "",
     genres: []
   }
 ];
