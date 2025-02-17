@@ -296,7 +296,7 @@ function Read(book) {
   embed.src = book;
   embed.type = "application/pdf";
   embed.width = "100%";
-  embed.height = "600px";
+  embed.height = "900px";
 
   const backButton = document.createElement("button");
   backButton.innerText = "⬅ Back to Library";
