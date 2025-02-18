@@ -246,12 +246,30 @@ const books = [
   },
 
   {
-    title: "",
-    author: "",
-    description: "",
-    cover: "",
-    file: "",
-    genres: []
+    title: "Fundamentals of Physics",
+    author: "Jearl Walker, David Halliday and Robert Resnick",
+    description: "A comprehensive and accessible guide to classical and modern physics, featuring clear explanations and problem-solving techniques.",
+    cover: "https://m.media-amazon.com/images/I/81+lwBghWBL._AC_UF1000,1000_QL80_.jpg",
+    file: "books/NewUU/Jearl Walker, David Halliday and Robert Resnick, Fundamentals of physics - 10th edition.pdf",
+    genres: ["NewUU"]
+  },
+
+  {
+    title: "Calculus. Early Transcendentals",
+    author: "James Stewart, Daniel Clegg, Saleem Watson",
+    description: "A widely acclaimed textbook covering essential calculus concepts with clear explanations, real-world applications, and a strong emphasis on problem-solving.",
+    cover: "https://images.booksense.com/images/927/613/9781337613927.jpg",
+    file: "books/NewUU/Calculus_Early_Transcendentals_Ninth_Edition_by_James_Stewart,_Daniel.pdf",
+    genres: ["NewUU"]
+  },
+
+  {
+    title: "Linear Algebra: A Modern Introduction",
+    author: "David Pole",
+    description: "An intuitive and applications-driven approach to linear algebra, balancing theory with real-world problem-solving techniques.",
+    cover: "https://m.media-amazon.com/images/I/61WAsuulGzS._AC_UF1000,1000_QL80_.jpg",
+    file: "books/NewUU/David_Poole_Linear_Algebra_A_Modern_Introduction_2014,_Cengage_Learning.pdf",
+    genres: ["NewUU"]
   }
 ];
 
