@@ -206,3 +206,14 @@ nav.active {
 #pageContent.active {
   transform: translateX(200px) scale(0.9);
 }
+
+.book-item .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.book-item .description {
+  font-size: 14px;
+  color: #777;
+}
