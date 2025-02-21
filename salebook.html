@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewUU Library</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>📚 Book Market</h1>
+    <div id = "SearchButton"><input type="text" id="search" placeholder="Search books..." oninput="filterBooks()"></div>
+  </header>
+
+  <main>
+    <div class="book-grid" id="bookGrid"></div>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by NewUU students</p>
+  </footer>
+
+  <style>
+    
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fb;
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+#SearchButton input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.book-item:hover {
+  transform: translateY(-10px);
+}
+
+.book-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.book-item h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
+  </style>
+
+<script>
+
+const books = [
+  {
+    title: "The Great Gatsby",
+    price: "$15.99",
+    description: "A classic novel by F. Scott Fitzgerald about the American Dream.",
+    image: "https://covers.openlibrary.org/b/id/10574109-L.jpg"
+  },
+  {
+    title: "1984",
+    price: "$12.99",
+    description: "A dystopian novel by George Orwell that explores totalitarianism.",
+    image: "https://covers.openlibrary.org/b/id/8253062-L.jpg"
+  },
+  {
+    title: "To Kill a Mockingbird",
+    price: "$14.50",
+    description: "Harper Lee's novel about racial injustice in the Deep South.",
+    image: "https://covers.openlibrary.org/b/id/10757130-L.jpg"
+  },
+];
+
+function displayBooks() {
+  const bookGrid = document.getElementById('bookGrid');
+  
+  books.forEach(book => {
+    const bookItem = document.createElement('div');
+    bookItem.classList.add('book-item');
+    
+    bookItem.innerHTML = `
+      <img src="${book.image}" alt="${book.title}">
+      <h3>${book.title}</h3>
+      <p class="price">${book.price}</p>
+      <p class="description">${book.description}</p>
+    `;
+    
+    bookGrid.appendChild(bookItem);
+  });
+}
+
+window.onload = displayBooks;
+
+function filterBooks() {
+  const searchTerm = document.getElementById('search').value.toLowerCase();
+  const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTerm));
+
+  const bookGrid = document.getElementById('bookGrid');
+  bookGrid.innerHTML = '';
+  filteredBooks.forEach(book => {
+    const bookItem = document.createElement('div');
+    bookItem.classList.add('book-item');
+    
+    bookItem.innerHTML = `
+      <img src="${book.image}" alt="${book.title}">
+      <h3>${book.title}</h3>
+      <p class="price">${book.price}</p>
+      <p class="description">${book.description}</p>
+    `;
+        bookGrid.appendChild(bookItem);
+  });
+}
+
+</script>
+
+</body>
+</html>
