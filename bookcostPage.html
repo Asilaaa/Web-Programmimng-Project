@@ -106,7 +106,7 @@ nav ul li a {
 }
 .search-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 20px auto;
   text-align: center;
 }
@@ -153,10 +153,52 @@ input[type="file"]:hover {
   margin-top: 20px;
   border-radius: 8px;
 }
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links .social-icon {
+  font-size: 20px;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-links .social-icon:hover {
+  color: #75ded3;
+}
+
 </style>
 <script>
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("active"); //Asila this for button left top corner
 }
 </script>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 NewUU Library. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="#" class="social-icon">Insagram</a>
+      <a href="#" class="social-icon">Facebook</a>
+      <a href="#" class="social-icon">Email: 📧 </a>
+    </div>
+  </div>
+</footer>
+
 </html>
