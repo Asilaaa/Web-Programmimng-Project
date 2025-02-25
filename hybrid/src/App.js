@@ -1,0 +1,41 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SignIn from "./pages/SignIn";
+import SectionsPage from "./pages/SectionsPage";
+import SectionPage from "./pages/SectionPage";
+import ReadPage from "./pages/ReadBook";
+import Sell from "./pages/Sell";
+import AdminPanel from "./pages/AdminPanel";
+import "./styles.css";
+
+function App() {
+  return (
+    <>
+      <img
+        src="/images/backgroundImg.jpg"
+        alt="Background"
+        className="background-image"
+      />
+
+      <div className="overlay">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signIn" element={<SignIn />} />
+          <Route path="/sectionsPage" element={<SectionsPage />} />
+          <Route path="/sections/:genre" element={<SectionPage />} />
+          <Route path="/read/:title" element={<ReadPage />} />
+          <Route path="/sell" element={<Sell />} />
+          {/* Admin Panel route */}
+          <Route path="/admin/*" element={<AdminPanel />} />
+        </Routes>
+      </div>
+    </>
+  );
+}
+
+export default App;
